@@ -2,7 +2,7 @@ from random import randint
 from time import sleep
 import emoji
 
-coresletras ={'branco':'\033[30m',     #Biblioteca de cores
+coresletras={'branco':'\033[30m',     #Biblioteca de cores
               'limpa':'\033[m',
               'vermelho':'\033[31m',
               'verde':'\033[32m',
@@ -12,25 +12,25 @@ coresletras ={'branco':'\033[30m',     #Biblioteca de cores
               'ciano':'\033[36m',
               'cinza':'\033[37m'}
 
-tentativa = 0
+tentativa=0
 
-p = str(input(emoji.emojize('Olá jogador, vamos fazer um jogo?:middle_finger: \n [S/N] '))).strip().upper()[0]
+p=str(input(emoji.emojize('Olá jogador, vamos fazer um jogo?:middle_finger: \n [S/N] '))).strip().upper()[0]
 
-if p == 'S':
+if p=='S':
     print(emoji.emojize('Você escolheu o jogo! :check_mark:'))
-    num = randint(1, 10)
-    jogador = int(input(emoji.emojize('Pois bem jogador, entre 1 a 10 está o número que escolhi! Tente adivinhar! :grinning_squinting_face:  ')))
+    num=randint(1, 10)
+    jogador=int(input(emoji.emojize('Pois bem jogador, entre 1 a 10 está o número que escolhi! Tente adivinhar! :grinning_squinting_face:  ')))
     
-    while jogador != num:
+    while jogador!=num:  #Enquanto o jogador digitar qualquer coisa que não sejao um número, tera de repetir.
         
-        jogador = int(input('Tente novamente: '))
+        jogador=int(input('Tente novamente: '))
         
         
-        if jogador == num:
+        if jogador==num:
             print(emoji.emojize('Woahh :face_with_open_mouth:  {}você conseguiu! Parabens!{}'.format(coresletras['magenta'], coresletras['limpa'])))
             tentativa += jogador
 
 print('O jogador tentou {} vezes até conseguir!'.format(tentativa))
 
-if p == 'N':
+if p=='N':
     print(emoji.emojize('Você escolheu sair! :cross_mark:'))
